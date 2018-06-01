@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Voorraadgever</string>
+    <string name="navigation_drawer_open">Open navigatie</string>
+    <string name="navigation_drawer_close">Sluit navigatie</string>
+    <string name="nav_header_title">Voorraadgever</string>
+    <string name="nav_header_subtitle">voorraadgever@hotmail.com</string>
+    <string name="nav_header_desc">Navigatie</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="title_activity_voorraadlijst">Voorraadlijst</string>
+    <string name="title_activity_boodschappenlijst">Boodschappenlijst</string>
+</resources>

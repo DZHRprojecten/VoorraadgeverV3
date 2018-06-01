@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#819FF7"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:showIn="@layout/app_bar_main">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="289dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginStart="61dp"
+        android:background="#BDBDBD"
+        android:text="Boodschappenlijst"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="289dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="298dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginStart="61dp"
+        android:background="#BDBDBD"
+        android:text="Help"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="289dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginStart="61dp"
+        android:background="#BDBDBD"
+        android:text="Maps"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="289dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="44dp"
+        android:background="#BDBDBD"
+        android:text="Voorraadlijst"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
