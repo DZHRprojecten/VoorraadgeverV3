@@ -27,7 +27,8 @@
             android:name=".Boodschappenlijst"
             android:label="@string/title_activity_boodschappenlijst"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Help"></activity>
+        <activity android:name=".Help" />
+        <activity android:name=".Zoekscherm"></activity>
     </application>
 
 </manifest>

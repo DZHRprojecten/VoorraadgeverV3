@@ -1,5 +1,7 @@
 package com.example.remmy.project4;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,10 +22,29 @@ public class Boodschappenlijst extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+                new AlertDialog.Builder(Boodschappenlijst.this)
+                        .setTitle("Maak uw keuze!")
+                        .setMessage("Aan welke lijst wilt u iets toevoegen?")
+                        .setPositiveButton("Voorraadlijst", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
 
+                                dialog.cancel(); //Zet hier de actie die je wilt uitvoeren als je op "Boodschappenlijst" drukt.
+                            }
+                        })
+                        .setNegativeButton("Boodschappenlijst", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel(); //Zet hier de actie die je wilt uitvoeren als je op "Voorraadlijst" drukt.
+                            }
+                        })
+                        .setNeutralButton("Standaard productenlijst", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel();
+                            }
+                        }).show();
+        }
+    });
+
+    }
 }

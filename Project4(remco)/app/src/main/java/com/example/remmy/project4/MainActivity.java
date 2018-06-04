@@ -29,39 +29,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Maak uw keuze!")
-                        .setMessage("Aan welke lijst wilt u iets toevoegen?")
-                        .setPositiveButton("Boodschappenlijst", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                dialog.cancel(); //Zet hier de actie die je wilt uitvoeren als je op "Boodschappenlijst" drukt.
-                            }
-                        })
-                        .setNegativeButton("Voorraadlijst", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                dialog.cancel(); //Zet hier de actie die je wilt uitvoeren als je op "Voorraadlijst" drukt.
-                            }
-                        })
-                        .setNeutralButton("Annuleren", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                            dialog.cancel();
-                        }
-                        }).show();
-
-
-
-
-
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
