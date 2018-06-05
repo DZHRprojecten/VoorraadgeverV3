@@ -70,6 +70,16 @@ public class MainActivity extends AppCompatActivity
                 //if you want to finish the first activity then just call
             }
         });
+        FloatingActionButton fab0 = findViewById(R.id.fab0);
+        fab0.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(getApplicationContext(),Zoekscherm.class));
+                //if you want to finish the first activity then just call
+            }
+        });
 
     }
 
