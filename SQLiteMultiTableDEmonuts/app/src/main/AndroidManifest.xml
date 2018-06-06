@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GetAllUsersActivity" />
-        <activity android:name=".UpdateDeleteActivity"></activity>
+        <activity android:name=".UpdateDeleteActivity" />
+        <activity android:name=".DatabaseMain"></activity>
     </application>
 
 </manifest>

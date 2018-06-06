@@ -16,11 +16,18 @@
         android:textColor="#000"
         android:text="Data from SQLite"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toevoegen"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Toevoegen"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lv">
-
 
     </ListView>
 

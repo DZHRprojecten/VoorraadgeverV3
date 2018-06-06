@@ -40,7 +40,7 @@ public class UpdateDeleteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 databaseHelper.updateUser(userModel.getId(),etname.getText().toString(),ethobby.getText().toString(),etcity.getText().toString());
                 Toast.makeText(UpdateDeleteActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(UpdateDeleteActivity.this,MainActivity.class);
+                Intent intent = new Intent(UpdateDeleteActivity.this,UpdateDeleteActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
@@ -51,9 +51,9 @@ public class UpdateDeleteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 databaseHelper.deleteUSer(userModel.getId());
                 Toast.makeText(UpdateDeleteActivity.this, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(UpdateDeleteActivity.this,MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                //Intent intent = new Intent(UpdateDeleteActivity.this,UpdateDeleteActivity.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                //startActivity(intent);
             }
         });
 
