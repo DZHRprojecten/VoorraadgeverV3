@@ -27,13 +27,13 @@ public class UpdateDeleteActivity extends AppCompatActivity {
 
         etname = (EditText) findViewById(R.id.etname);
         ethobby = (EditText) findViewById(R.id.ethobby);
-        //etcity = (EditText) findViewById(R.id.etcity);
+        etcity = (EditText) findViewById(R.id.etcity);
         btndelete = (Button) findViewById(R.id.btndelete);
         btnupdate = (Button) findViewById(R.id.btnupdate);
 
         etname.setText(userModel.getProduct());
         ethobby.setText(userModel.getAantal_dagen());
-        //etcity.setText(userModel.getCity());
+        etcity.setText(userModel.getAantal_producten());
 
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override

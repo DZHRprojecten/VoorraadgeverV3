@@ -42,6 +42,25 @@
         android:layout_marginRight="10dp"
         android:hint=" Aantal dagen in voorraad"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aantal in voorraad"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/etcity"
+        android:background="#fff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:hint=" Aantal in voorraad"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

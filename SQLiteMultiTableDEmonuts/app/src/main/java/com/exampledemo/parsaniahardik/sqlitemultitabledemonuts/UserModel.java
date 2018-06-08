@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UserModel implements Serializable{
 
     //private String name, hobby, city;
-    private String product, aantal_dagen;
+    private String product, aantal_dagen, aantal_producten;
     private int id;
 
     /*public String getCity() {
@@ -53,9 +53,15 @@ public class UserModel implements Serializable{
 
     /*public String getHobby() {
         return hobby;
+    }*/
+    public String getAantal_producten() {
+        return aantal_producten;
     }
 
-    public void setHobby(String hobby) {
+    /*public void setHobby(String hobby) {
         this.hobby = hobby;
     }*/
+    public void setAantal_producten(String aantal_producten) {
+        this.aantal_producten = aantal_producten;
+    }
 }

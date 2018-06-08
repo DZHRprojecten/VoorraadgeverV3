@@ -51,7 +51,7 @@ public class CustomAdapter extends BaseAdapter {
 
             holder.tvname = (TextView) convertView.findViewById(R.id.name);
             holder.tvhobby = (TextView) convertView.findViewById(R.id.hobby);
-            //holder.tvcity = (TextView) convertView.findViewById(R.id.city);
+            holder.tvcity = (TextView) convertView.findViewById(R.id.city);
 
 
             convertView.setTag(holder);
@@ -62,14 +62,14 @@ public class CustomAdapter extends BaseAdapter {
 
         holder.tvname.setText("Product: "+userModelArrayList.get(position).getProduct());
         holder.tvhobby.setText("Aantal dagen in voorraad: "+userModelArrayList.get(position).getAantal_dagen());
-        //holder.tvcity.setText("City: "+userModelArrayList.get(position).getCity());
+        holder.tvcity.setText("Aantal producten in voorraad: "+userModelArrayList.get(position).getAantal_producten());
 
         return convertView;
     }
 
     private class ViewHolder {
 
-        protected TextView tvname, tvhobby;//, tvcity;
+        protected TextView tvname, tvhobby, tvcity;
     }
 
 }
