@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,11 +7,39 @@
     android:background="@color/colorAccent">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gotodatabase"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Voorraadlijst"/>
+    android:id="@+id/boodschappenlijst"
+    android:layout_width="333sp"
+    android:layout_height="70sp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="97dp"
+    android:background="#BDBDBD"
+    android:text="Boodschappenlijst"
+    android:textSize="29sp"
+    android:textColor="#FFFFFF" />
 
-</LinearLayout>
+    <Button
+    android:id="@+id/help"
+    android:layout_width="333sp"
+    android:layout_height="70sp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="180dp"
+    android:background="#BDBDBD"
+    android:text="Help"
+    android:textSize="29sp"
+    android:textColor="#FFFFFF" />
+
+    <Button
+    android:id="@+id/voorraadlijst"
+    android:layout_width="333sp"
+    android:layout_height="70sp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    android:text="Voorraadlijst"
+    android:textSize="29sp"
+    android:background="#BDBDBD"
+    android:textColor="#FFFFFF" />
+
+</RelativeLayout>

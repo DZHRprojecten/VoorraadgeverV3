@@ -25,16 +25,16 @@ public class DatabaseMain extends AppCompatActivity {
         btnGetall = (Button) findViewById(R.id.btnget);
         etname = (EditText) findViewById(R.id.etname);
         ethobby = (EditText) findViewById(R.id.ethobby);
-        etcity = (EditText) findViewById(R.id.etcity);
+        //etcity = (EditText) findViewById(R.id.etcity);
 
         btnStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseHelper.addUser(etname.getText().toString(), ethobby.getText().toString(), etcity.getText().toString());
+                databaseHelper.addUser(etname.getText().toString(), ethobby.getText().toString()/*, etcity.getText().toString()*/);
                 etname.setText("");
                 ethobby.setText("");
-                etcity.setText("");
-                Toast.makeText(DatabaseMain.this, "Stored Successfully!", Toast.LENGTH_SHORT).show();
+                //etcity.setText("");
+                Toast.makeText(DatabaseMain.this, "Product toegevoegd!", Toast.LENGTH_SHORT).show();
             }
         });
 

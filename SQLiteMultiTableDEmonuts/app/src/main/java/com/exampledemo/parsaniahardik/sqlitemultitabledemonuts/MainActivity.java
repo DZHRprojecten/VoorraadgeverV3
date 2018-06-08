@@ -14,13 +14,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button voorraadButton = (Button) findViewById(R.id.gotodatabase);
+        Button boodschappenButton = (Button) findViewById(R.id.boodschappenlijst);
+
+        boodschappenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent d = new Intent(MainActivity.this, GetAllUsersActivity.class);
+                startActivity(d);
+            }
+        });
+
+        Button voorraadButton = (Button) findViewById(R.id.voorraadlijst);
 
         voorraadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent d = new Intent(MainActivity.this, GetAllUsersActivity.class);
                 startActivity(d);
+            }
+        });
+
+        Button helpButton = (Button) findViewById(R.id.help);
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Deze functionaliteit wordt nog toegevoegd", Toast.LENGTH_SHORT).show();
             }
         });
     }

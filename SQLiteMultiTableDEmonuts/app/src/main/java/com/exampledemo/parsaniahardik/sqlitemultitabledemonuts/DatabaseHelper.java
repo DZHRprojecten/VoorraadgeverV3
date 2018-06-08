@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addUser(String name, String hobby, String city) {
+    public void addUser(String name, String hobby/*, String city*/) {
         SQLiteDatabase db = this.getWritableDatabase();
         //adding user name in users table
         ContentValues values = new ContentValues();
@@ -76,10 +76,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_USER_HOBBY, null, valuesHobby);
 
         //adding user city in users_city table
-        ContentValues valuesCity = new ContentValues();
+        /*ContentValues valuesCity = new ContentValues();
         valuesCity.put(KEY_ID, id);
         valuesCity.put(KEY_CITY, city);
-        db.insert(TABLE_USER_CITY, null, valuesCity);
+        db.insert(TABLE_USER_CITY, null, valuesCity);*/
     }
 
     public ArrayList<UserModel> getAllUsers() {
@@ -93,7 +93,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do {
                 UserModel userModel = new UserModel();
                 userModel.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-                userModel.setName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                userModel.setProduct(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
 
                             //getting user hobby where id = id from user_hobby table
                             String selectHobbyQuery = "SELECT  * FROM " + TABLE_USER_HOBBY +" WHERE "+KEY_ID+" = "+ userModel.getId();
@@ -103,20 +103,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                                         if (cHobby.moveToFirst()) {
                                             do {
-                                                userModel.setHobby(cHobby.getString(cHobby.getColumnIndex(KEY_HOBBY)));
+                                                userModel.setAantal_dagen(cHobby.getString(cHobby.getColumnIndex(KEY_HOBBY)));
                                             } while (cHobby.moveToNext());
                                         }
 
                             //getting user city where id = id from user_city table
-                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel.getId();;
+                            //String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel.getId();;
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
-                            Cursor cCity = db.rawQuery(selectCityQuery, null);
+                            //Cursor cCity = db.rawQuery(selectCityQuery, null);
 
-                            if (cCity.moveToFirst()) {
+                            /*if (cCity.moveToFirst()) {
                                 do {
-                                    userModel.setCity(cCity.getString(cCity.getColumnIndex(KEY_CITY)));
+                                    userModel.setAantal_dagen(cCity.getString(cCity.getColumnIndex(KEY_CITY)));
                                 } while (cCity.moveToNext());
-                            }
+                            }*/
 
                     // adding to Students list
                     userModelArrayList.add(userModel);
@@ -139,9 +139,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.update(TABLE_USER_HOBBY, valuesHobby, KEY_ID + " = ?", new String[]{String.valueOf(id)});
 
         // updating city in users_city table
-        ContentValues valuesCity = new ContentValues();
-        valuesCity.put(KEY_CITY, city);
-        db.update(TABLE_USER_CITY, valuesCity, KEY_ID + " = ?", new String[]{String.valueOf(id)});
+        //ContentValues valuesCity = new ContentValues();
+        //valuesCity.put(KEY_CITY, city);
+        //db.update(TABLE_USER_CITY, valuesCity, KEY_ID + " = ?", new String[]{String.valueOf(id)});
     }
 
     public void deleteUSer(int id) {
@@ -156,7 +156,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.delete(TABLE_USER_HOBBY, KEY_ID + " = ?", new String[]{String.valueOf(id)});
 
         //deleting from users_city table
-        db.delete(TABLE_USER_CITY, KEY_ID + " = ?",new String[]{String.valueOf(id)});
+        //db.delete(TABLE_USER_CITY, KEY_ID + " = ?",new String[]{String.valueOf(id)});
     }
 
 }

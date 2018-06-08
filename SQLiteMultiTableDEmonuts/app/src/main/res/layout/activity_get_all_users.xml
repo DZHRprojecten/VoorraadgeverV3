@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,25 +10,32 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Voorraadlijst"
         android:textSize="20sp"
-        android:textColor="#000"
-        android:text="Data from SQLite"/>
+        android:textColor="#FFFFFF"/>
 
     <Button
+        android:id="@+id/toevoegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/toevoegen"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Toevoegen"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Toevoegen"
+        android:textColor="#FFFFFF"/>
 
     <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="37dip"
+        android:background="#81BEF7">
+
 
     </ListView>
 
-</LinearLayout>
+</RelativeLayout>

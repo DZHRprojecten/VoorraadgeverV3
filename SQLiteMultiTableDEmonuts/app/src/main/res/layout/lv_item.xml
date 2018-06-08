@@ -8,19 +8,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"
+        android:background="#81BEF7"
         android:orientation="vertical">
 
          <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:textColor="#fff"
-             android:layout_marginTop="10dp"
+             android:textColor="#FFFFFF"
+             android:layout_marginTop="5dp"
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="10dp"
-            android:text="Name" />
+            android:text=" Product" />
         <TextView
             android:id="@+id/hobby"
             android:layout_width="match_parent"
@@ -29,16 +29,7 @@
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="10dp"
-            android:text="Hobby" />
-        <TextView
-            android:id="@+id/city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:gravity="center_vertical"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="10dp"
-            android:text="City" />
+            android:text=" Aantal dagen in voorraad" />
 
 
     </LinearLayout>
