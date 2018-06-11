@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Voorraadgever</string>
+    <string name="title_activity_database_standaard">DatabaseStandaard</string>
 </resources>

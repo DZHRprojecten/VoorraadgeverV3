@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class DatabaseMain extends AppCompatActivity {
 
-    private Button btnStore, btnGetall;
+    private Button btnStore, btnGetall, btnStandaard;
     private EditText etname, ethobby, etcity;
     private DatabaseHelper databaseHelper;
 
@@ -23,6 +23,7 @@ public class DatabaseMain extends AppCompatActivity {
 
         btnStore = (Button) findViewById(R.id.btnstore);
         btnGetall = (Button) findViewById(R.id.btnget);
+        btnStandaard = (Button) findViewById(R.id.btnstandaard);
         etname = (EditText) findViewById(R.id.etname);
         ethobby = (EditText) findViewById(R.id.ethobby);
         etcity = (EditText) findViewById(R.id.etcity);
@@ -42,6 +43,14 @@ public class DatabaseMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DatabaseMain.this, GetAllUsersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnStandaard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DatabaseMain.this, DatabaseStandaard.class);
                 startActivity(intent);
             }
         });

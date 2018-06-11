@@ -9,10 +9,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DatabaseHelper databaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        databaseHelper = new DatabaseHelper(this);
+
+        databaseHelper.addUser("Aardappels", "10", "20");
 
         Button boodschappenButton = (Button) findViewById(R.id.boodschappenlijst);
 
