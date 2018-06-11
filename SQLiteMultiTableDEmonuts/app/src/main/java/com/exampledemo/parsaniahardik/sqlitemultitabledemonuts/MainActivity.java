@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
-        databaseHelper.addUser("Aardappels", "10", "20");
+        //databaseHelper.addUser("Aardappels", "10", "20");
 
         Button boodschappenButton = (Button) findViewById(R.id.boodschappenlijst);
 
