@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class UpdateDeleteActivity extends AppCompatActivity {
 
     private UserModel userModel;
-    private EditText etname, ethobby, etcity;
+    private EditText etname, ethobby, etcity, etIsinvoorraad, etIsinboodschappen, etTime;
     private Button btnupdate, btndelete;
     private DatabaseHelper databaseHelper;
 
@@ -34,11 +34,14 @@ public class UpdateDeleteActivity extends AppCompatActivity {
         etname.setText(userModel.getProduct());
         ethobby.setText(userModel.getAantal_dagen());
         etcity.setText(userModel.getAantal_producten());
+        etIsinvoorraad.setText(userModel.getIsinvoorraad());
+        etIsinboodschappen.setText(userModel.getIsinboodschappen());
+        etTime.setText(userModel.getTime_Start());
 
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseHelper.updateUser(userModel.getId(),etname.getText().toString(),ethobby.getText().toString(),etcity.getText().toString());
+                databaseHelper.updateUser(userModel.getId(),etname.getText().toString(),ethobby.getText().toString(),etcity.getText().toString(),etIsinvoorraad.getText().toString(), etIsinboodschappen.getText().toString(), etTime.getText().toString());
                 Toast.makeText(UpdateDeleteActivity.this, "Wijzigingen opgeslagen!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(UpdateDeleteActivity.this,GetAllUsersActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -1,0 +1,4 @@
+#Tue Jun 05 17:26:47 CEST 2018
+base.0=D\:\\Documents\\Project4 (App)\\VoorraadgeverV3\\Project4(remco)\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.0=classes.dex
+renamed.0=classes.dex

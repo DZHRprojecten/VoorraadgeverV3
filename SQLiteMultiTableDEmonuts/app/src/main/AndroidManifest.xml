@@ -18,7 +18,9 @@
         <activity android:name=".GetAllUsersActivity" />
         <activity android:name=".UpdateDeleteActivity" />
         <activity android:name=".DatabaseMain" />
-        <activity android:name=".DatabaseStandaard"></activity>
+        <activity android:name=".DatabaseStandaard" />
+        <activity android:name=".ToevoegenBoodschappen" />
+        <activity android:name=".Boodschappenlijst"></activity>
     </application>
 
 </manifest>

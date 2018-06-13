@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         boodschappenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent d = new Intent(MainActivity.this, GetAllUsersActivity.class);
+                Intent d = new Intent(MainActivity.this, Boodschappenlijst.class);
                 startActivity(d);
             }
         });

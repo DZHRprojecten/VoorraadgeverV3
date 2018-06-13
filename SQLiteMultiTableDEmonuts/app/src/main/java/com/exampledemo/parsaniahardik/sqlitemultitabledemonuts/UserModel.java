@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UserModel implements Serializable{
 
     //private String name, hobby, city;
-    private String product, aantal_dagen, aantal_producten;
+    private String product, aantal_dagen, aantal_producten, Isinvoorraad, Isinboodschappen, Time_Start;
     private int id;
 
     /*public String getCity() {
@@ -64,4 +64,27 @@ public class UserModel implements Serializable{
     public void setAantal_producten(String aantal_producten) {
         this.aantal_producten = aantal_producten;
     }
+
+    public String getIsinvoorraad() {
+        return Isinvoorraad;
+    }
+    public void setIsinvoorraad(String Isinvoorraad) {
+        this.Isinvoorraad = Isinvoorraad;
+    }
+
+    public String getIsinboodschappen() {
+        return Isinboodschappen;
+    }
+    public void setIsinboodschappen(String Isinboodschappen) {
+        this.Isinboodschappen = Isinboodschappen;
+    }
+
+    public String getTime_Start() {
+        return Time_Start;
+    }
+    public void setTime_Start(String Time_Start) {
+        this.Time_Start = Time_Start;
+    }
+
+
 }

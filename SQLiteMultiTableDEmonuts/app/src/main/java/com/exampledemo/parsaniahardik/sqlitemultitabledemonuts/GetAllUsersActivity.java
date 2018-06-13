@@ -25,7 +25,7 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
-        userModelArrayList = databaseHelper.getAllUsers();
+        userModelArrayList = databaseHelper.getAllUsers(true, false);
 
         customAdapter = new CustomAdapter(this,userModelArrayList);
         listView.setAdapter(customAdapter);
