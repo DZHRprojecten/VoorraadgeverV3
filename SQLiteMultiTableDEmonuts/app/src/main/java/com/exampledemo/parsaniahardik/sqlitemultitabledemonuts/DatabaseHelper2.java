@@ -10,9 +10,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper2 extends SQLiteOpenHelper {
 
-    public static String DATABASE_NAME = "user_database";
+    public static String DATABASE_NAME = "boodschappen_database";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_USER = "users";
     private static final String TABLE_USER_HOBBY = "users_hobby";
@@ -41,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TABLE_USER_TIME_START + "(" + KEY_ID + " INTEGER,"+ KEY_USER_TIME_START + "TEXT );";
 
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper2(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
         Log.d("table", CREATE_TABLE_STUDENTS);
@@ -92,8 +92,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<UserModel> getAllUsers() {
-        ArrayList<UserModel> userModelArrayList = new ArrayList<UserModel>();
+    public ArrayList<UserModel2> getAllUsers() {
+        ArrayList<UserModel2> userModelArrayList2 = new ArrayList<UserModel2>();
 
         String selectQuery = "SELECT  * FROM " + TABLE_USER;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -101,41 +101,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // looping through all rows and adding to list
         if (c.moveToFirst()) {
             do {
-                UserModel userModel = new UserModel();
-                userModel.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-                userModel.setProduct(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                UserModel2 userModel2 = new UserModel2();
+                userModel2.setId(c.getInt(c.getColumnIndex(KEY_ID)));
+                userModel2.setProduct(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
 
 
                             //getting user hobby where id = id from user_hobby table
-                            String selectHobbyQuery = "SELECT  * FROM " + TABLE_USER_HOBBY +" WHERE "+KEY_ID+" = "+ userModel.getId();
+                            String selectHobbyQuery = "SELECT  * FROM " + TABLE_USER_HOBBY +" WHERE "+KEY_ID+" = "+ userModel2.getId();
                             Log.d("oppp",selectHobbyQuery);
                             //SQLiteDatabase dbhobby = this.getReadableDatabase();
                             Cursor cHobby = db.rawQuery(selectHobbyQuery, null);
 
                                         if (cHobby.moveToFirst()) {
                                             do {
-                                                userModel.setAantal_dagen(cHobby.getString(cHobby.getColumnIndex(KEY_HOBBY)));
+                                                userModel2.setAantal_dagen(cHobby.getString(cHobby.getColumnIndex(KEY_HOBBY)));
                                             } while (cHobby.moveToNext());
                                         }
 
                             //getting user city where id = id from user_city table
-                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel.getId();;
+                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel2.getId();;
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cCity = db.rawQuery(selectCityQuery, null);
 
                             if (cCity.moveToFirst()) {
                                 do {
-                                    userModel.setAantal_producten(cCity.getString(cCity.getColumnIndex(KEY_CITY)));
+                                    userModel2.setAantal_producten(cCity.getString(cCity.getColumnIndex(KEY_CITY)));
                                 } while (cCity.moveToNext());
                             }
 
-                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel.getId();;
+                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel2.getId();;
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cTime = db.rawQuery(selectTimeQuery, null);
 
                             if (cTime.moveToFirst()) {
                                 do {
-                                    userModel.setTime_Start(cTime.getString(cTime.getColumnIndex(KEY_USER_TIME_START)));
+                                    userModel2.setTime_Start(cTime.getString(cTime.getColumnIndex(KEY_USER_TIME_START)));
                                 } while (cTime.moveToNext());
                             }
 
@@ -143,10 +143,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
                 // adding to Students list
-                    userModelArrayList.add(userModel);
+                    userModelArrayList2.add(userModel2);
                 } while (c.moveToNext());
          }
-        return userModelArrayList;
+        return userModelArrayList2;
     }
 
     public void updateUser(int id, String name, String hobby, String city) {

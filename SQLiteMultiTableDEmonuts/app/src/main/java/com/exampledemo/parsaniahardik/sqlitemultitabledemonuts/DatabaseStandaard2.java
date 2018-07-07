@@ -1,18 +1,18 @@
 package com.exampledemo.parsaniahardik.sqlitemultitabledemonuts;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class DatabaseStandaard extends AppCompatActivity {
+public class DatabaseStandaard2 extends AppCompatActivity {
 
-    private ListView standaardLijst;
-    private DatabaseHelper databaseHelper;
+    private ListView standaardLijst2;
+    private DatabaseHelper2 databaseHelper2;
 
     private String[] producten = {"Aanmaakblokjes",
             "Aanmaaklimonade",
@@ -682,15 +682,15 @@ public class DatabaseStandaard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_database_standaard);
+        setContentView(R.layout.activity_database_standaard2);
 
-        standaardLijst = (ListView)this.findViewById(R.id.standaardlijst);
+        standaardLijst2 = (ListView)this.findViewById(R.id.standaardlijst2);
 
-        databaseHelper = new DatabaseHelper(this);
+        databaseHelper2 = new DatabaseHelper2(this);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
-        standaardLijst.setAdapter(arrayAdapter);
+        standaardLijst2.setAdapter(arrayAdapter);
 
         for (int i = 0; i < producten.length; i++)
         {
@@ -702,15 +702,15 @@ public class DatabaseStandaard extends AppCompatActivity {
 
         arrayAdapter.notifyDataSetChanged();
 
-        standaardLijst.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        standaardLijst2.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id){
                 //ItemClicked item = adapter.getItemAtPosition(position);
                 String item = ((TextView)view).getText().toString();
-                Intent intent = new Intent(DatabaseStandaard.this,GetAllUsersActivity.class);
+                Intent intent = new Intent(DatabaseStandaard2.this,GetAllUsersActivity.class);
                 //based on item add info to intent
                 startActivity(intent);
-                databaseHelper.addUser(producten[position], aantalDagenInVoorraad[position], aantalInVoorraad[position], "");
+                databaseHelper2.addUser(producten[position], aantalDagenInVoorraad[position], aantalInVoorraad[position], "");
             }
         });
 

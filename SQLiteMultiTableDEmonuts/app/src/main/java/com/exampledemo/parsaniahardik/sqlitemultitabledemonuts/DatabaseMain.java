@@ -37,7 +37,7 @@ public class DatabaseMain extends AppCompatActivity {
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat sdf1 = new SimpleDateFormat("MM-dd-yyyy");
                 String output = sdf1.format(c.getTime());
-                databaseHelper.addUser(etname.getText().toString(), ethobby.getText().toString(), etcity.getText().toString(), true, false, output);
+                databaseHelper.addUser(etname.getText().toString(), ethobby.getText().toString(), etcity.getText().toString(), output);
                 etname.setText("");
                 ethobby.setText("");
                 etcity.setText("");

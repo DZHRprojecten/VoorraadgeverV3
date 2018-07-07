@@ -12,9 +12,9 @@ import java.util.ArrayList;
 public class Boodschappenlijst extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<UserModel> userModelArrayList;
-    private CustomAdapter customAdapter;
-    private DatabaseHelper databaseHelper;
+    private ArrayList<UserModel2> userModelArrayList2;
+    private CustomAdapter2 customAdapter2;
+    private DatabaseHelper2 databaseHelper2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +23,18 @@ public class Boodschappenlijst extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.lv2);
 
-        databaseHelper = new DatabaseHelper(this);
+        databaseHelper2 = new DatabaseHelper2(this);
 
-        userModelArrayList = databaseHelper.getAllUsers(false, true);
+        userModelArrayList2 = databaseHelper2.getAllUsers();
 
-        customAdapter = new CustomAdapter(this,userModelArrayList);
-        listView.setAdapter(customAdapter);
+        customAdapter2 = new CustomAdapter2(this,userModelArrayList2);
+        listView.setAdapter(customAdapter2);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Boodschappenlijst.this, UpdateDeleteActivity.class);
-                intent.putExtra("user", userModelArrayList.get(position));
+                Intent intent = new Intent(Boodschappenlijst.this, UpdateDeleteActivity2.class);
+                intent.putExtra("user", userModelArrayList2.get(position));
                 startActivity(intent);
             }
         });
@@ -43,7 +43,16 @@ public class Boodschappenlijst extends AppCompatActivity {
         toevoegenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent d = new Intent(Boodschappenlijst.this, DatabaseMain.class);
+                Intent d = new Intent(Boodschappenlijst.this, ToevoegenBoodschappen.class);
+                startActivity(d);
+            }
+        });
+
+        Button homeButton = (Button) findViewById(R.id.home);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent d = new Intent(Boodschappenlijst.this, MainActivity.class);
                 startActivity(d);
             }
         });

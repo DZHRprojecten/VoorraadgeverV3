@@ -10,26 +10,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapter2 extends BaseAdapter {
 
     private Context context;
-    private ArrayList<UserModel> userModelArrayList;
+    private ArrayList<UserModel2> userModelArrayList2;
 
-    public CustomAdapter(Context context, ArrayList<UserModel> userModelArrayList) {
+    public CustomAdapter2(Context context, ArrayList<UserModel2> userModelArrayList2) {
 
         this.context = context;
-        this.userModelArrayList = userModelArrayList;
+        this.userModelArrayList2 = userModelArrayList2;
     }
 
 
     @Override
     public int getCount() {
-        return userModelArrayList.size();
+        return userModelArrayList2.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return userModelArrayList.get(position);
+        return userModelArrayList2.get(position);
     }
 
     @Override
@@ -58,9 +58,9 @@ public class CustomAdapter extends BaseAdapter {
             holder = (ViewHolder)convertView.getTag();
         }
 
-        holder.tvname.setText("Product: "+userModelArrayList.get(position).getProduct());
-        holder.tvhobby.setText("Aantal dagen in voorraad: "+userModelArrayList.get(position).getAantal_dagen());
-        holder.tvcity.setText("Aantal producten in voorraad: "+userModelArrayList.get(position).getAantal_producten());
+        holder.tvname.setText("Product: "+userModelArrayList2.get(position).getProduct());
+        holder.tvhobby.setText("Aantal dagen in voorraad: "+userModelArrayList2.get(position).getAantal_dagen());
+        holder.tvcity.setText("Aantal producten in voorraad: "+userModelArrayList2.get(position).getAantal_producten());
 
         return convertView;
     }

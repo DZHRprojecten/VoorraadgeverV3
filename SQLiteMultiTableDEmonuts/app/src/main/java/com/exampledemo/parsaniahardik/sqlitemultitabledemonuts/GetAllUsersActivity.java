@@ -25,7 +25,7 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
-        userModelArrayList = databaseHelper.getAllUsers(true, false);
+        userModelArrayList = databaseHelper.getAllUsers();
 
         customAdapter = new CustomAdapter(this,userModelArrayList);
         listView.setAdapter(customAdapter);
@@ -44,6 +44,15 @@ public class GetAllUsersActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent d = new Intent(GetAllUsersActivity.this, DatabaseMain.class);
+                startActivity(d);
+            }
+        });
+
+        Button homeButton = (Button) findViewById(R.id.home);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent d = new Intent(GetAllUsersActivity.this, MainActivity.class);
                 startActivity(d);
             }
         });
