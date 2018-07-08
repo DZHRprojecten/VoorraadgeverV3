@@ -65,6 +65,69 @@ public class CustomAdapter2 extends BaseAdapter {
         return convertView;
     }
 
+    public String getProduct(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            holder = new ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.lv_item, null, true);
+
+            holder.tvname = (TextView) convertView.findViewById(R.id.name);
+
+
+            convertView.setTag(holder);
+        }else {
+            // the getTag returns the viewHolder object set as a tag to the view
+            holder = (ViewHolder)convertView.getTag();
+        }
+
+        return holder.tvname.getText().toString();
+    }
+
+    public String getProductAantalDagen(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            holder = new ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.lv_item, null, true);
+
+            holder.tvhobby = (TextView) convertView.findViewById(R.id.hobby);
+
+
+            convertView.setTag(holder);
+        }else {
+            // the getTag returns the viewHolder object set as a tag to the view
+            holder = (ViewHolder)convertView.getTag();
+        }
+
+        return holder.tvhobby.getText().toString();
+    }
+
+    public String getProductAantal(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            holder = new ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.lv_item, null, true);
+
+            holder.tvcity = (TextView) convertView.findViewById(R.id.city);
+
+
+            convertView.setTag(holder);
+        }else {
+            // the getTag returns the viewHolder object set as a tag to the view
+            holder = (ViewHolder)convertView.getTag();
+        }
+
+        return holder.tvcity.getText().toString();
+    }
+
     private class ViewHolder {
 
         protected TextView tvname, tvhobby, tvcity;

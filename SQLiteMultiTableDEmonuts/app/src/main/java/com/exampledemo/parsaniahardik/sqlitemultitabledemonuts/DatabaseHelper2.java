@@ -1,12 +1,16 @@
 package com.exampledemo.parsaniahardik.sqlitemultitabledemonuts;
 
 
+import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -24,6 +28,8 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
     private static final String KEY_HOBBY = "hobby";
     private static final String KEY_CITY = "city";
 
+    private DatabaseHelper databaseHelper;
+    private static Context myContext;
 
     /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT......);*/
 
@@ -53,6 +59,7 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_USER_HOBBY);
         db.execSQL(CREATE_TABLE_USER_CITY);
         db.execSQL(CREATE_TABLE_USER_TIME_START);
+        databaseHelper = new DatabaseHelper(myContext);
 
     }
 
@@ -119,7 +126,7 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
                                         }
 
                             //getting user city where id = id from user_city table
-                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel2.getId();;
+                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel2.getId();
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cCity = db.rawQuery(selectCityQuery, null);
 
@@ -129,7 +136,7 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
                                 } while (cCity.moveToNext());
                             }
 
-                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel2.getId();;
+                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel2.getId();
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cTime = db.rawQuery(selectTimeQuery, null);
 
@@ -188,6 +195,5 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
         db.delete(TABLE_USER_TIME_START, KEY_ID + " = ?",new String[]{String.valueOf(id)});
 
     }
-
 }
 

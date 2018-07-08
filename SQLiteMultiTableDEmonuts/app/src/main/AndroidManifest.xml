@@ -22,7 +22,11 @@
         <activity android:name=".DatabaseStandaard" />
         <activity android:name=".DatabaseStandaard2" />
         <activity android:name=".ToevoegenBoodschappen" />
-        <activity android:name=".Boodschappenlijst"></activity>
+        <activity android:name=".Boodschappenlijst" />
+        <activity android:name=".HelpScherm" />
+        <activity android:name=".HelpScherm2" />
+        <activity android:name=".HelpScherm3" />
+        <activity android:name=".HelpScherm4"></activity>
     </application>
 
 </manifest>

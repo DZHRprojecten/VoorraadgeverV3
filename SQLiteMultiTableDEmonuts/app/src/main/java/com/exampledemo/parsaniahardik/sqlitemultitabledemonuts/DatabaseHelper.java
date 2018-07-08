@@ -119,7 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                         }
 
                             //getting user city where id = id from user_city table
-                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel.getId();;
+                            String selectCityQuery = "SELECT  * FROM " + TABLE_USER_CITY+" WHERE "+KEY_ID+" = "+ userModel.getId();
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cCity = db.rawQuery(selectCityQuery, null);
 
@@ -129,7 +129,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                 } while (cCity.moveToNext());
                             }
 
-                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel.getId();;
+                            String selectTimeQuery = "SELECT  * FROM " + TABLE_USER_TIME_START+" WHERE "+KEY_ID+" = "+ userModel.getId();
                             //SQLiteDatabase dbCity = this.getReadableDatabase();
                             Cursor cTime = db.rawQuery(selectTimeQuery, null);
 

@@ -1,8 +1,11 @@
 package com.exampledemo.parsaniahardik.sqlitemultitabledemonuts;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,6 +18,7 @@ public class Boodschappenlijst extends AppCompatActivity {
     private ArrayList<UserModel2> userModelArrayList2;
     private CustomAdapter2 customAdapter2;
     private DatabaseHelper2 databaseHelper2;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,7 @@ public class Boodschappenlijst extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lv2);
 
         databaseHelper2 = new DatabaseHelper2(this);
+        databaseHelper = new DatabaseHelper(this);
 
         userModelArrayList2 = databaseHelper2.getAllUsers();
 
@@ -54,6 +59,29 @@ public class Boodschappenlijst extends AppCompatActivity {
             public void onClick(View v) {
                 Intent d = new Intent(Boodschappenlijst.this, MainActivity.class);
                 startActivity(d);
+            }
+        });
+
+        Button doneButton = (Button) findViewById(R.id.done);
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int size = userModelArrayList2.size();
+                String string = size + "";
+                Log.i(string, "size van array");
+                for(int i = 0; i < 100; i++){
+                    //databaseHelper2.moveProducts();
+                    if(i < userModelArrayList2.size()) {
+                        databaseHelper.addUser(userModelArrayList2.get(i).getProduct(), userModelArrayList2.get(i).getAantal_dagen(), userModelArrayList2.get(i).getAantal_producten(), "");
+                    }
+
+                    Log.i(i + "", "Dit is i");
+
+                    databaseHelper2.deleteUSer(i+1);
+                }
+                userModelArrayList2.clear();
+                userModelArrayList2.addAll(databaseHelper2.getAllUsers());
+                customAdapter2.notifyDataSetChanged();
             }
         });
 

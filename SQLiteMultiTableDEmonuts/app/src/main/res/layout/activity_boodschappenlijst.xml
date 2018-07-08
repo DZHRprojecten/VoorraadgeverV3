@@ -35,6 +35,16 @@
         android:text="Hoofdmenu"
         android:textColor="#FFFFFF" />
 
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Alles afvinken"
+        android:textColor="#FFFFFF"/>
+
+
     <ListView
         android:id="@+id/lv2"
         android:layout_width="match_parent"
@@ -45,7 +55,7 @@
         android:layout_marginTop="37dip"
         android:background="#81BEF7">
 
-
     </ListView>
+
 
 </RelativeLayout>

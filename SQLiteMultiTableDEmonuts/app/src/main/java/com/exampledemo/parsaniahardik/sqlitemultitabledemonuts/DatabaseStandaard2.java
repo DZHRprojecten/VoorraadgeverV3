@@ -707,7 +707,7 @@ public class DatabaseStandaard2 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id){
                 //ItemClicked item = adapter.getItemAtPosition(position);
                 String item = ((TextView)view).getText().toString();
-                Intent intent = new Intent(DatabaseStandaard2.this,GetAllUsersActivity.class);
+                Intent intent = new Intent(DatabaseStandaard2.this,Boodschappenlijst.class);
                 //based on item add info to intent
                 startActivity(intent);
                 databaseHelper2.addUser(producten[position], aantalDagenInVoorraad[position], aantalInVoorraad[position], "");

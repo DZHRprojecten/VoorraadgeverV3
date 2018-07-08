@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Deze functionaliteit wordt nog toegevoegd", Toast.LENGTH_SHORT).show();
+                Intent d = new Intent(MainActivity.this, HelpScherm.class);
+                startActivity(d);
             }
         });
     }
